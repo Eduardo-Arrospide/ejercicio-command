@@ -1,7 +1,7 @@
 #include "command.h"
 
 
-Controller *Controller::instance = 0;
+Controller *Controller::instance = nullptr;
 
 int main() 
 {
@@ -9,15 +9,15 @@ int main()
 
     TurnOnCommand *command = controller->getCommand();
 
-    Light* red = new Light("red");
-    Light *green = new Light("green");
-    Light *yellow = new Light("yellow");
+    Light red("red");
+    Light green("green");
+    Light yellow("yellow");
 
-    red->isOn();
+    red.isOn();
 
-    command->execute(red);
+    command->execute(&red);
 
-    red->isOn();
+    red.isOn();
 
     return 0;
 }

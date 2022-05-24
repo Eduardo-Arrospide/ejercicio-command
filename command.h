@@ -40,13 +40,13 @@ public:
 class Command 
 {
 public:
-    virtual void execute(Device* device){};
+    virtual void execute(Device* device) = 0;
 };
 
 class TurnOnCommand: public Command
 {
 public:
-    virtual void execute(Device* device) override 
+    void execute(Device* device) override 
     {
         device->turnedOn = !device->turnedOn;
     }
